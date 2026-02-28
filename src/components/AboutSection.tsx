@@ -35,17 +35,14 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-[11px] font-mono text-primary uppercase tracking-[0.4em] mb-4 block">
-                Who I Am
+              <span className="text-[12px] font-mono text-primary uppercase tracking-[0.4em] mb-4 block font-bold">
+                👋 Who I Am
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 leading-[1.05] tracking-tight">
-                Started from scratch,
-                <br />
-                <span className="text-primary">learned from the best.</span>
+              <h2 className="text-5xl md:text-6xl font-bold font-display mb-8 leading-[1.05] tracking-tight text-foreground">
+                Hey, I'm Shivansh.
               </h2>
-              <p className="text-muted-foreground leading-[1.7] mb-5 text-base">
-                Hey, I'm Shivansh. I'm 20, and I started Pixels Cyber because I kept seeing small businesses 
-                get sold overpriced "solutions" they didn't need. Figured I could do better.
+              <p className="text-foreground leading-[1.8] mb-8 text-lg font-medium">
+                I'm 20, and I started Pixel Cyber Tech because I kept seeing small businesses get sold overpriced "solutions" they didn't need. Figured I could do better.
               </p>
               <p className="text-muted-foreground leading-[1.7] mb-5 text-base">
                 My <span className="text-primary font-semibold">dad</span> taught me that if you're going to do something, 

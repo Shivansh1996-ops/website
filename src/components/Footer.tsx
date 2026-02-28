@@ -26,7 +26,7 @@ const Footer = () => {
                 Hosted somewhere secure (obviously)
               </span>
               <span className="text-[11px] text-muted-foreground font-mono">
-                © 2024 Pixels Cyber Tech
+                © 2026 Pixel Cyber Tech
               </span>
             </div>
           </div>
