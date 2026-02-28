@@ -38,10 +38,10 @@ const AboutSection = () => {
               <span className="text-[12px] font-mono text-primary uppercase tracking-[0.4em] mb-4 inline-block font-bold bg-primary/5 px-3 py-2 rounded-full border border-primary/20">
                 👋 Who I Am
               </span>
-              <h2 className="text-6xl md:text-7xl font-bold font-display mb-4 leading-[1.02] tracking-tight text-foreground">
-                Hey, I'm Shivansh.
+              <h2 className="text-[44px] md:text-[72px] font-extrabold font-display mb-3 leading-[0.98] tracking-tight text-foreground">
+                <span className="block">Hey, I'm Shivansh.</span>
               </h2>
-              <div className="w-36 h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 mb-6" />
+              <div className="w-48 h-2 rounded-full bg-gradient-to-r from-primary/80 to-primary/40 mb-6 shadow-[0_6px_28px_rgba(34,197,94,0.12)]" />
               <p className="text-foreground leading-[1.8] mb-8 text-lg font-medium">
                 I'm 20, and I started Pixel Cyber Tech because I kept seeing small businesses get sold overpriced "solutions" they didn't need. Figured I could do better.
               </p>

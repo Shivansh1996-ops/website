@@ -69,12 +69,11 @@ const ServicesSection = () => {
                   ⚙️ What I Do
                 </span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold font-display leading-[1.05] tracking-tight text-foreground">
-                Two things.
-                <br />
-                <span className="text-primary">Done right.</span>
+              <h2 className="text-[48px] md:text-[112px] font-extrabold font-display leading-[0.92] tracking-tight">
+                <span className="block text-foreground">Two things.</span>
+                <span className="block text-primary">Done right.</span>
               </h2>
-              <div className="w-40 h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 mt-4 mb-6" />
+              <div className="w-full max-w-[720px] h-2 rounded-full bg-gradient-to-r from-primary/80 to-primary/40 mt-6 mb-8 shadow-[0_8px_40px_rgba(34,197,94,0.14)]" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
