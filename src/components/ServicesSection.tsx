@@ -88,41 +88,50 @@ const ServicesSection = () => {
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-3">
             {services.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ scale: 1.03, y: -8 }}
-                className="group bg-card/50 backdrop-blur-sm p-8 hover:bg-surface transition-all duration-500 relative cursor-pointer border border-border/50 hover:border-primary/50 rounded-xl overflow-hidden"
+                initial={{ opacity: 0, x: -30 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group"
               >
-                {/* Animated gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
-                
-                <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-6">
-                    <motion.div 
-                      whileHover={{ rotate: 360, scale: 1.15 }}
-                      transition={{ duration: 0.6, ease: "easeInOut" }}
-                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:shadow-[0_0_30px_hsl(var(--glow)/0.4)] transition-all duration-300 border border-primary/20"
-                    >
-                      <service.icon className="w-7 h-7 text-primary" />
-                    </motion.div>
-                    <span className="text-[10px] font-mono text-muted-foreground/40 tracking-wider bg-muted/30 px-2 py-1 rounded">
+                <div className="flex items-start gap-4 p-6 rounded-lg border border-border/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer relative overflow-hidden"
+                >
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/50 to-transparent group-hover:w-1.5 transition-all duration-300" />
+                  
+                  {/* Number badge */}
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/60 transition-all duration-300">
+                    <span className="text-[11px] font-mono font-bold text-primary">
                       {service.num}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold font-display mb-3 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    {service.description}
-                  </p>
+                  
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-2">
+                      <motion.div 
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-5 h-5 text-primary group-hover:text-primary transition-colors flex-shrink-0"
+                      >
+                        <service.icon className="w-5 h-5" />
+                      </motion.div>
+                      <h3 className="text-base font-semibold font-display group-hover:text-primary transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  {/* Hover arrow */}
+                  <div className="flex-shrink-0 text-muted-foreground/0 group-hover:text-primary/60 transition-all duration-300 text-2xl">
+                    ›
+                  </div>
                 </div>
               </motion.div>
             ))}
