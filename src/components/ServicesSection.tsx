@@ -64,11 +64,10 @@ const ServicesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight mb-2">
-                Two things.
-                <br />
-                <span className="text-primary">Done right.</span>
-              </h2>
+                <h2 className="text-3xl sm:text-4xl md:text-[112px] font-extrabold font-display leading-[0.92] tracking-tight mb-2">
+                  <span className="block text-foreground">Two things.</span>
+                  <span className="block text-primary">Done right.</span>
+                </h2>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}

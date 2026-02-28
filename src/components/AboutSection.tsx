@@ -38,11 +38,11 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-5xl md:text-6xl font-bold font-display mb-10 leading-[1.15] tracking-tight">
-                <span className="text-primary">Hey, I'm Shivansh.</span>
-                <br />
-                <span className="text-foreground text-4xl md:text-5xl">CEO, Pixel Cyber Tech.</span>
+              <h2 className="text-2xl sm:text-3xl md:text-[72px] font-extrabold font-display mb-6 leading-[1.05] tracking-tight">
+                <span className="block text-primary">Hey, I'm Shivansh.</span>
+                <span className="block text-foreground text-base sm:text-lg md:text-[36px]">CEO, Pixel Cyber Tech.</span>
               </h2>
+              <div className="w-28 sm:w-36 md:w-48 h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 mb-6 shadow-[0_6px_28px_rgba(34,197,94,0.12)]" />
               
               <p className="text-xl md:text-2xl text-muted-foreground/80 mb-12 leading-[1.4]">
                 Started from scratch, learned from the best.
