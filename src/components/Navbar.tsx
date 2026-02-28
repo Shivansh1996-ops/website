@@ -28,8 +28,8 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+      <div className="relative container mx-auto px-6 py-5 flex items-center justify-center">
+        <a href="#" className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-3">
           <span className="text-xl font-bold font-display tracking-tight text-primary">
             Pixel Cyber Tech
           </span>
@@ -55,7 +55,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground"
+          className="md:hidden absolute right-6 top-1/2 -translate-y-1/2 text-foreground"
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
