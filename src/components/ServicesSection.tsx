@@ -65,15 +65,16 @@ const ServicesSection = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block mb-4">
-                <span className="text-[11px] font-mono text-primary uppercase tracking-[0.4em] px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-                  What I Do
+                <span className="text-[12px] font-mono font-bold text-primary uppercase tracking-[0.35em] px-4 py-2 bg-primary/5 rounded-full border border-primary/20">
+                  ⚙️ What I Do
                 </span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold font-display leading-[1.05] tracking-tight">
+              <h2 className="text-5xl md:text-6xl font-bold font-display leading-[1.05] tracking-tight text-foreground">
                 Two things.
                 <br />
                 <span className="text-primary">Done right.</span>
               </h2>
+              <div className="w-40 h-1 rounded-full bg-gradient-to-r from-primary to-primary/60 mt-4 mb-6" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
