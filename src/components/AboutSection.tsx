@@ -26,45 +26,67 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
-          <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+          <div ref={ref} className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left: Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-[12px] font-mono text-primary uppercase tracking-[0.4em] mb-4 inline-block font-bold bg-primary/5 px-3 py-2 rounded-full border border-primary/20">
-                👋 Who I Am
-              </span>
-              <h2 className="text-[44px] md:text-[72px] font-extrabold font-display mb-3 leading-[0.98] tracking-tight text-foreground">
-                <span className="block">Hey, I'm Shivansh.</span>
+              <h2 className="text-5xl md:text-6xl font-bold font-display mb-10 leading-[1.15] tracking-tight">
+                <span className="text-primary">Hey, I'm Shivansh.</span>
+                <br />
+                <span className="text-foreground text-4xl md:text-5xl">CEO, Pixel Cyber Tech.</span>
               </h2>
-              <div className="w-48 h-2 rounded-full bg-gradient-to-r from-primary/80 to-primary/40 mb-6 shadow-[0_6px_28px_rgba(34,197,94,0.12)]" />
-              <p className="text-foreground leading-[1.8] mb-8 text-lg font-medium">
-                I'm 20, and I started Pixel Cyber Tech because I kept seeing small businesses get sold overpriced "solutions" they didn't need. Figured I could do better.
+              
+              <p className="text-xl md:text-2xl text-muted-foreground/80 mb-12 leading-[1.4]">
+                Started from scratch, learned from the best.
               </p>
-              <p className="text-muted-foreground leading-[1.7] mb-5 text-base">
-                My <span className="text-primary font-semibold">dad</span> taught me that if you're going to do something, 
-                do it right. My <span className="text-primary font-semibold">mom</span> taught me to keep going even when 
-                it's hard (and trust me, starting a business at 20 is hard). And my <span className="text-primary font-semibold">grandpa</span>? 
-                He's the one who taught me to think three steps ahead—which is basically what security is.
-              </p>
-              <p className="text-muted-foreground leading-[1.7] mb-8 text-base">
-                I write every line of code myself. No outsourcing, no copy-paste from GitHub. 
-                If my name's on it, I need to know exactly how it works and be able to fix it at 2 AM if something breaks.
-              </p>
+              
+              <div className="space-y-8 mb-12">
+                <p className="text-muted-foreground leading-[1.9] text-lg">
+                  I'm 20, started Pixel Cyber Tech because small businesses were getting sold overpriced "solutions" they didn't need.
+                </p>
+                <p className="text-muted-foreground leading-[1.9] text-lg">
+                  My <span className="text-primary font-semibold">dad</span> taught me to do things right. 
+                  My <span className="text-primary font-semibold">mom</span> taught me to keep going when it's hard. 
+                  My <span className="text-primary font-semibold">grandpa</span> taught me to think three steps ahead—which is basically what security is.
+                </p>
+                <p className="text-muted-foreground leading-[1.9] text-lg">
+                  I write every line myself. If my name's on it, I need to know exactly how it works.
+                </p>
+              </div>
+              
               <div className="flex flex-wrap gap-3">
-                <div className="px-4 py-2 rounded-lg bg-primary/5 border border-primary/20">
-                  <span className="text-sm text-primary">Self-taught since 16</span>
-                </div>
-                <div className="px-4 py-2 rounded-lg bg-primary/5 border border-primary/20">
-                  <span className="text-sm text-primary">First tool at 18</span>
-                </div>
-                <div className="px-4 py-2 rounded-lg bg-primary/5 border border-primary/20">
-                  <span className="text-sm text-primary">Running this at 20</span>
-                </div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.3 }}
+                  className="px-5 py-3 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/15 transition-colors"
+                >
+                  <span className="text-sm font-medium text-primary">Self-taught since 16</span>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 }}
+                  className="px-5 py-3 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/15 transition-colors"
+                >
+                  <span className="text-sm font-medium text-primary">First tool at 18</span>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.5 }}
+                  className="px-5 py-3 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/15 transition-colors"
+                >
+                  <span className="text-sm font-medium text-primary">Running this at 20</span>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -74,23 +96,23 @@ const AboutSection = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 }}
             >
-              <div className="rounded-xl border border-border overflow-hidden bg-card">
+              <div className="rounded-xl border border-primary/20 overflow-hidden bg-card/50 backdrop-blur-sm shadow-[0_0_50px_rgba(74,222,128,0.1)]">
                 {/* Terminal header */}
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/30">
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-primary/20 bg-muted/50">
                   <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-destructive/50" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                    <div className="w-3 h-3 rounded-full bg-red-500/60" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
                   <div className="flex items-center gap-2 ml-3">
-                    <Terminal className="w-3 h-3 text-muted-foreground" />
-                    <span className="text-[11px] font-mono text-muted-foreground">
+                    <Terminal className="w-3.5 h-3.5 text-primary" />
+                    <span className="text-xs font-mono text-primary">
                       threat_monitor
                     </span>
                   </div>
                 </div>
                 {/* Terminal body */}
-                <div className="p-5 font-mono text-xs leading-loose space-y-0.5">
+                <div className="p-6 font-mono text-sm leading-loose space-y-1">
                   {terminalLines.map((line, i) => (
                     <motion.div
                       key={i}

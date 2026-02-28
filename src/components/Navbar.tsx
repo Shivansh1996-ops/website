@@ -4,9 +4,8 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "What I Do", href: "/#services" },
-  { label: "Attack Demo", href: "/simulation" },
-  { label: "About", href: "/#about" },
+  { label: "AI Framework", href: "/framework" },
+  { label: "About", href: "/about" },
 ];
 
 const Navbar = () => {
@@ -40,17 +39,11 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-[13px] font-medium text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide"
+              className="text-[13px] font-medium text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide font-['Poppins']"
             >
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="px-6 py-2.5 rounded-full bg-primary text-black text-[13px] font-semibold hover:shadow-[0_0_30px_hsl(var(--glow)/0.5)] transition-all duration-300"
-          >
-            Get in Touch
-          </a>
         </div>
 
         <button
@@ -75,18 +68,11 @@ const Navbar = () => {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors font-['Poppins']"
                 >
                   {item.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 px-5 py-2.5 rounded-full bg-primary text-black text-sm font-semibold text-center"
-              >
-                Get in Touch
-              </a>
             </div>
           </motion.div>
         )}

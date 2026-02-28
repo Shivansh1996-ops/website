@@ -58,79 +58,68 @@ const ServicesSection = () => {
       
       <div className="container mx-auto px-6" ref={ref}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="grid lg:grid-cols-2 gap-16 mb-20 items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block mb-4">
-                <span className="text-[12px] font-mono font-bold text-primary uppercase tracking-[0.35em] px-4 py-2 bg-primary/5 rounded-full border border-primary/20">
-                  ⚙️ What I Do
-                </span>
-              </div>
-              <h2 className="text-[48px] md:text-[112px] font-extrabold font-display leading-[0.92] tracking-tight">
-                <span className="block text-foreground">Two things.</span>
-                <span className="block text-primary">Done right.</span>
+              <h2 className="text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight mb-2">
+                Two things.
+                <br />
+                <span className="text-primary">Done right.</span>
               </h2>
-              <div className="w-full max-w-[720px] h-2 rounded-full bg-gradient-to-r from-primary/80 to-primary/40 mt-6 mb-8 shadow-[0_8px_40px_rgba(34,197,94,0.14)]" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="flex items-end"
             >
-              <p className="text-muted-foreground leading-relaxed text-base">
+              <p className="text-muted-foreground leading-[1.8] text-lg">
                 Honestly? I do two things really well: I find holes in your security, and I build custom tools to patch them. 
                 Everything else is just variations of those two. No packages, no tiers, no "enterprise plans."
               </p>
             </motion.div>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, i) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, x: -30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group"
+                whileHover={{ y: -5 }}
+                className="group relative"
               >
-                <div className="flex items-start gap-4 p-6 rounded-lg border border-border/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-pointer relative overflow-hidden"
-                >
-                  {/* Left accent bar */}
-                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/50 to-transparent group-hover:w-1.5 transition-all duration-300" />
+                <div className="h-full p-8 rounded-2xl border border-border/50 hover:border-primary/50 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-500 overflow-hidden">
+                  {/* Animated gradient background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   
-                  {/* Number badge */}
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/60 transition-all duration-300">
-                    <span className="text-[11px] font-mono font-bold text-primary">
-                      {service.num}
-                    </span>
-                  </div>
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
                   
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-2">
+                  <div className="relative z-10">
+                    {/* Icon and Title Row */}
+                    <div className="flex items-start gap-4 mb-4">
                       <motion.div 
-                        whileHover={{ scale: 1.2 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-5 h-5 text-primary group-hover:text-primary transition-colors flex-shrink-0"
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:shadow-[0_0_30px_hsl(var(--glow)/0.4)] transition-all duration-300 border border-primary/20 flex-shrink-0"
                       >
-                        <service.icon className="w-5 h-5" />
+                        <service.icon className="w-7 h-7 text-primary" />
                       </motion.div>
-                      <h3 className="text-base font-semibold font-display group-hover:text-primary transition-colors duration-300">
-                        {service.title}
-                      </h3>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-bold font-display mb-2 group-hover:text-primary transition-colors duration-300">
+                          {service.title}
+                        </h3>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    
+                    {/* Description */}
+                    <p className="text-base text-muted-foreground leading-[1.7] group-hover:text-gray-300 transition-colors duration-300">
                       {service.description}
                     </p>
-                  </div>
-                  
-                  {/* Hover arrow */}
-                  <div className="flex-shrink-0 text-muted-foreground/0 group-hover:text-primary/60 transition-all duration-300 text-2xl">
-                    ›
                   </div>
                 </div>
               </motion.div>
