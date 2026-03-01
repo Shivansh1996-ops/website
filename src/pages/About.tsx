@@ -55,7 +55,7 @@ const About = () => {
                   <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72">
                     <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
                       <img
-                        src="/WhatsApp Image 2026-02-28 at 23.50.06.jpeg"
+                        src="/profile.jpg"
                         alt="Shivansh - CEO of Pixel Cyber Tech"
                         className="w-full h-full object-cover"
                       />
