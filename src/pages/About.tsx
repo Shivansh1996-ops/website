@@ -52,10 +52,10 @@ const About = () => {
                   transition={{ delay: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <div className="relative w-64 h-64 md:w-72 md:h-72">
+                  <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72">
                     <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
                       <img
-                        src="/profile.jpg"
+                        src="/WhatsApp Image 2026-02-28 at 23.50.06.jpeg"
                         alt="Shivansh - CEO of Pixel Cyber Tech"
                         className="w-full h-full object-cover"
                       />
@@ -70,13 +70,13 @@ const About = () => {
                   transition={{ delay: 0.3 }}
                   className="flex-1 text-center md:text-left"
                 >
-                  <h1 className="text-5xl md:text-6xl font-bold font-display mb-3">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-3">
                     Hey, I'm <span className="text-primary">Shivansh</span>
                   </h1>
-                  <p className="text-2xl md:text-3xl text-muted-foreground mb-6">
+                  <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-6">
                     CEO & Founder, Pixel Cyber Tech
                   </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
+                  <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto md:mx-0">
                     Building security solutions that actually make sense for small businesses. 
                     No corporate BS, just honest work.
                   </p>

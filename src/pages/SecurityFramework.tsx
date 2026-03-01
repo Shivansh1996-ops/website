@@ -314,7 +314,7 @@ const SecurityFramework = () => {
                     </div>
 
                     {/* Arena Visualization */}
-                    <div className="relative h-[500px] bg-gradient-to-br from-black/60 to-black/40 rounded-2xl border-2 border-border/30 overflow-hidden">
+                    <div className="relative h-[400px] md:h-[500px] bg-gradient-to-br from-black/60 to-black/40 rounded-2xl border-2 border-border/30 overflow-hidden">
                       {/* Grid background */}
                       <div className="absolute inset-0 opacity-10" style={{
                         backgroundImage: `linear-gradient(rgba(74, 222, 128, 0.3) 1px, transparent 1px),
