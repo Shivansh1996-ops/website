@@ -75,7 +75,7 @@ const ServicesSection = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.15 }}
             >
-              <p className="text-muted-foreground leading-[1.8] text-lg">
+              <p className="text-muted-foreground leading-[1.8] text-xl">
                 Honestly? I do two things really well: I find holes in your security, and I build custom tools to patch them. 
                 Everything else is just variations of those two. No packages, no tiers, no "enterprise plans."
               </p>
@@ -110,14 +110,14 @@ const ServicesSection = () => {
                         <service.icon className="w-7 h-7 text-primary" />
                       </motion.div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-bold font-display mb-2 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-2xl font-bold font-display mb-2 group-hover:text-primary transition-colors duration-300">
                           {service.title}
                         </h3>
                       </div>
                     </div>
                     
                     {/* Description */}
-                    <p className="text-base text-muted-foreground leading-[1.7] group-hover:text-gray-300 transition-colors duration-300">
+                    <p className="text-lg text-muted-foreground leading-[1.7] group-hover:text-gray-300 transition-colors duration-300">
                       {service.description}
                     </p>
                   </div>
