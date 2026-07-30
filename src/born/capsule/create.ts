@@ -153,7 +153,12 @@ export async function createCapsule(
       city: location.city,
       name: input.name,
     }),
-    population: buildPopulation(location.countryCode, location.city, year),
+    population: buildPopulation(
+      location.countryCode,
+      location.city,
+      year,
+      location.population,
+    ),
     narrative: narrative(input, location, year),
     quote: quoteFor(input.name, location.city),
     dayOfWeek: dayOfWeek(input.birthDate),

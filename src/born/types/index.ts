@@ -18,6 +18,7 @@ export interface GeoLocation {
   continent: string;
   timezone: string;
   displayName: string;
+  population?: number;
 }
 
 export interface BirthInput {

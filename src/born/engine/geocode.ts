@@ -12,6 +12,7 @@ interface OpenMeteoResult {
   admin1?: string;
   admin2?: string;
   timezone?: string;
+  population?: number;
 }
 
 /** Approximate timezone from longitude (fallback when API unavailable) */
@@ -102,6 +103,7 @@ export async function geocodeBirthplace(input: {
     continent: continentFromCountryCode(countryCode),
     timezone: hit.timezone || approxTimezone(hit.longitude),
     displayName: [hit.name, hit.admin1, hit.country].filter(Boolean).join(", "),
+    population: hit.population,
   };
 
   cache.set(key, location);

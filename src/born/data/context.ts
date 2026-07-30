@@ -165,7 +165,12 @@ export function buildPrices(countryCode: string, year: number): PriceItem[] {
   return items;
 }
 
-export function buildPopulation(countryCode: string, city: string, year: number): PopulationContext {
+export function buildPopulation(
+  countryCode: string,
+  city: string,
+  year: number,
+  cityPopulation?: number,
+): PopulationContext {
   // Approximate published UN / census ballparks — labeled as approximate
   const worldByDecade: Record<number, string> = {
     1990: "~5.3 billion",
@@ -182,24 +187,19 @@ export function buildPopulation(countryCode: string, city: string, year: number)
     BR: { 1990: "~150 million", 2000: "~175 million", 2010: "~196 million", 2020: "~213 million" },
     NG: { 1990: "~95 million", 2000: "~120 million", 2010: "~160 million", 2020: "~200 million+" },
   };
-  const cityNotes: Record<string, string> = {
-    hyderabad: "Hyderabad metro grew rapidly through the IT decades (exact census year varies).",
-    mumbai: "Mumbai has long been among India's largest urban agglomerations.",
-    delhi: "Delhi NCR is among the world's largest urban regions.",
-    "new york": "New York City metro remains one of the world's largest.",
-    tokyo: "Tokyo metro is consistently among the world's largest urban areas.",
-    london: "London has remained a global megacity throughout the modern era.",
-  };
 
   const cc = countryCode.toUpperCase();
-  const cKey = city.toLowerCase();
 
   return {
     city: {
       label: city,
-      value: cityNotes[cKey] ?? "City population figures vary by metro definition and census year.",
-      scope: cityNotes[cKey] ? "regional" : "unavailable",
-      note: "Exact historical city populations require census tables; we avoid inventing a number.",
+      value: cityPopulation
+        ? `~${cityPopulation.toLocaleString()} (recent metro estimate — not necessarily ${year})`
+        : "City population figures vary by metro definition and census year.",
+      scope: cityPopulation ? "exact" : "unavailable",
+      note: cityPopulation
+        ? "From geocoder population field; historical census-year values may differ."
+        : "Exact historical city populations require census tables; we avoid inventing a number.",
     },
     country: {
       label: "Country",
