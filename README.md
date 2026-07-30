@@ -1,37 +1,66 @@
-# Pixel Cyber Tech
+# BORN — The Day Your Story Began
 
-Custom cybersecurity solutions and consulting.
+A geographically personalized birth capsule. Enter your birth date and place; explore **My World** (regional) and **The World** (global) — music you can open on Spotify or YouTube, local weather, sky, culture, news hierarchy, and a commemorative **BORN Certificate**.
 
-## About
+> A commemorative digital experience — not an official government document.
 
-This is the official website for Pixel Cyber Tech, a cybersecurity startup founded by Shivansh.
+## Product philosophy
 
-## Development
+BORN should never feel like “facts about your birthday.”
 
-Install dependencies:
+It should feel like: **here is the world that existed around you when your story began.**
+
+`YOU → PLACE → REGION → COUNTRY → WORLD → SKY → CERTIFICATE → YOU`
+
+## Stack
+
+- React + TypeScript + Vite
+- Tailwind CSS + Framer Motion
+- Open-Meteo (historical weather)
+- OpenStreetMap Nominatim (geocoding)
+- Wikimedia On This Day (events)
+- SunCalc (local astronomy)
+- Curated regional/global music & cinema charts with Spotify / YouTube listen links
+
+## Develop
+
 ```bash
 npm install
-```
-
-Run development server:
-```bash
 npm run dev
 ```
 
-Build for production:
-```bash
-npm run build
+App runs at `http://localhost:8080`.
+
+Vite proxies external APIs under `/api/*` (see `vite.config.ts`).
+
+## Routes
+
+| Path | Purpose |
+|------|---------|
+| `/` | Landing |
+| `/create` | Birth details intake |
+| `/capsule/:publicId` | Full capsule experience |
+| `/c/:publicId` | Sharable capsule (optional `?p=` payload) |
+| `/verify/:token` | Certificate verification |
+
+## Architecture
+
+```
+src/lib/born/
+  engine/regional-intelligence.ts   # location → providers → normalize → cache → personalize
+  location/geocode.ts               # hierarchy + timezone
+  providers/                        # weather, astronomy, news, culture…
+  data/charts.ts                    # regional + global music/cinema
+  capsule/store.ts                  # local shareable capsules
+  certificate/                      # quotes, themes
 ```
 
-## Tech Stack
+Data priority for every fact: **local → regional → national → global**, with fallbacks clearly labeled.
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- shadcn/ui components
+## Scripts
 
-## Contact
-
-- Email: shivansh@pixlcyber.com
-- Phone: +91 6304484526
+```bash
+npm run build
+npm run test
+npm run lint
+```
