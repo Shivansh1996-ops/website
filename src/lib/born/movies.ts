@@ -105,7 +105,7 @@ export async function fetchTmdbYearHighlights(
   year: number,
   regionCode?: string,
 ): Promise<MovieRelease[]> {
-  const key = import.meta.env.VITE_TMDB_API_KEY as string | undefined;
+  const key = (typeof import.meta !== "undefined" && import.meta.env?.VITE_TMDB_API_KEY) || undefined;
   if (!key) return [];
 
   try {
