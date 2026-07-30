@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Figtree:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,55 +6,56 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Cartographic dawn — museum editorial, not neon AI slop */
+    --background: 210 24% 96%;
+    --foreground: 213 42% 12%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 30% 99%;
+    --card-foreground: 213 42% 12%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 42% 12%;
 
-    --primary: 142 76% 40%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 199 52% 28%;
+    --primary-foreground: 40 33% 98%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 32 28% 90%;
+    --secondary-foreground: 213 42% 14%;
 
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 18% 92%;
+    --muted-foreground: 215 14% 40%;
 
-    --accent: 142 76% 40%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 18 62% 48%;
+    --accent-foreground: 40 33% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 142 76% 40%;
+    --border: 210 16% 84%;
+    --input: 210 16% 84%;
+    --ring: 199 52% 28%;
 
-    --radius: 0.5rem;
+    --radius: 0.35rem;
 
-    --sidebar-background: 0 0% 2%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 142 76% 40%;
-    --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 8%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 142 76% 40%;
+    --ink: 213 42% 12%;
+    --sea: 199 52% 28%;
+    --copper: 18 62% 48%;
+    --gold: 40 42% 48%;
+    --paper: 40 33% 97%;
+    --mist: 210 24% 96%;
+    --mapline: 199 20% 70%;
 
-    /* Custom tokens */
-    --glow: 142 76% 40%;
-    --glow-bright: 142 76% 55%;
-    --surface: 0 0% 5%;
-    --surface-hover: 0 0% 8%;
-    --neon-green: 142 76% 40%;
-    --deep-black: 0 0% 0%;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Figtree", "Segoe UI", sans-serif;
 
-    --font-display: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --sidebar-background: 210 24% 96%;
+    --sidebar-foreground: 213 42% 12%;
+    --sidebar-primary: 199 52% 28%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 32 28% 90%;
+    --sidebar-accent-foreground: 213 42% 14%;
+    --sidebar-border: 210 16% 84%;
+    --sidebar-ring: 199 52% 28%;
   }
 }
 
@@ -68,12 +69,33 @@
   }
 
   body {
-    @apply bg-background text-foreground font-display antialiased;
-    letter-spacing: -0.01em;
+    @apply text-foreground antialiased;
+    font-family: var(--font-body);
+    background-color: hsl(var(--mist));
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, hsl(199 40% 88% / 0.7), transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, hsl(32 45% 88% / 0.55), transparent 50%),
+      radial-gradient(800px 400px at 50% 100%, hsl(199 30% 90% / 0.45), transparent 55%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--mapline) / 0.08) 48px,
+        hsl(var(--mapline) / 0.08) 49px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 48px,
+        hsl(var(--mapline) / 0.06) 48px,
+        hsl(var(--mapline) / 0.06) 49px
+      );
+    min-height: 100vh;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
 
@@ -82,113 +104,67 @@
     font-family: var(--font-display);
   }
 
-  .font-mono {
-    font-family: var(--font-mono);
+  .font-body {
+    font-family: var(--font-body);
   }
 
-  .glow-text {
-    text-shadow: 0 0 20px hsl(var(--glow) / 0.5), 0 0 40px hsl(var(--glow) / 0.2);
+  .text-ink {
+    color: hsl(var(--ink));
   }
 
-  .glow-box {
-    box-shadow: 0 0 20px hsl(var(--glow) / 0.15), 0 0 40px hsl(var(--glow) / 0.05), inset 0 1px 0 hsl(var(--glow) / 0.1);
+  .text-sea {
+    color: hsl(var(--sea));
   }
 
-  .glass {
-    background: hsl(var(--surface) / 0.6);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border) / 0.5);
+  .text-copper {
+    color: hsl(var(--copper));
   }
 
-  .glass-strong {
-    background: hsl(var(--surface) / 0.8);
-    backdrop-filter: blur(30px);
-    border: 1px solid hsl(var(--glow) / 0.1);
+  .bg-paper {
+    background-color: hsl(var(--paper));
   }
 
-  .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--neon-green)), hsl(var(--glow-bright)));
+  .bg-sea {
+    background-color: hsl(var(--sea));
   }
 
-  .gradient-border {
-    position: relative;
-  }
-  .gradient-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, hsl(var(--neon-green) / 0.5), hsl(var(--glow-bright) / 0.3));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+  .bg-copper {
+    background-color: hsl(var(--copper));
   }
 
-  .grid-pattern {
-    background-image: 
-      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 60px 60px;
+  .hairline {
+    border-color: hsl(var(--border));
   }
 
-  .scanline {
-    position: relative;
-    overflow: hidden;
+  .born-section {
+    @apply relative mx-auto w-full max-w-5xl px-5 py-16 md:px-8 md:py-24;
   }
-  .scanline::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      hsl(var(--glow) / 0.02) 50%
-    );
-    background-size: 100% 4px;
-    pointer-events: none;
+
+  .born-kicker {
+    @apply font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-sea;
+  }
+
+  .born-title {
+    @apply font-display text-4xl font-medium leading-[1.1] text-ink md:text-5xl;
+  }
+
+  .born-lede {
+    @apply mt-3 max-w-2xl font-body text-base leading-relaxed text-muted-foreground md:text-lg;
+  }
+
+  .topo-fade {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-@keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-@keyframes count-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes gridMove {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(50px); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
-}
-
-.animate-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(74, 222, 128, 0.1) 50%,
-    transparent 100%
-  );
-  background-size: 1000px 100%;
-  animation: shimmer 3s infinite;
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
 }

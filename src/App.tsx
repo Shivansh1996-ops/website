@@ -4,9 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import AttackSimulation from "./pages/AttackSimulation";
-import SecurityFramework from "./pages/SecurityFramework";
-import About from "./pages/About";
+import Create from "./pages/Create";
+import CapsulePage from "./pages/Capsule";
+import Verify from "./pages/Verify";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -19,10 +19,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/simulation" element={<AttackSimulation />} />
-          <Route path="/framework" element={<SecurityFramework />} />
-          <Route path="/about" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/create" element={<Create />} />
+          <Route path="/c/:token" element={<CapsulePage />} />
+          <Route path="/verify/:token" element={<Verify />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

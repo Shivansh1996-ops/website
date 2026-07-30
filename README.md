@@ -1,37 +1,50 @@
-# Pixel Cyber Tech
+# BORN
 
-Custom cybersecurity solutions and consulting.
+**The day your story began.**
 
-## About
+A geographically personalized birth capsule. Enter your birth date, time, and place — then explore two worlds at once:
 
-This is the official website for Pixel Cyber Tech, a cybersecurity startup founded by Shivansh.
+- **My World** — what was happening around your birthplace
+- **The World** — what was happening globally
+
+Finish with **The Born Certificate**, a commemorative digital artifact (not an official government document).
+
+## Features
+
+- Location-first geocoding (Open-Meteo + Nominatim fallback)
+- Local historical weather (Open-Meteo archive)
+- Local sky / moon calculations (SunCalc + lat/lon/timezone)
+- Regional → national → global music with Spotify & YouTube listen links
+- Regional cinema highlights (+ optional TMDB when `VITE_TMDB_API_KEY` is set)
+- Hierarchical news & timeline layers
+- Sharable capsules (`/c/:token`) with compressed seed payloads
+- Certificate themes, PDF/image export, QR → public capsule, `/verify/:token`
 
 ## Development
 
-Install dependencies:
 ```bash
 npm install
-```
-
-Run development server:
-```bash
 npm run dev
 ```
 
-Build for production:
 ```bash
+npm run test
 npm run build
 ```
 
-## Tech Stack
+Optional:
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- shadcn/ui components
+```bash
+# .env
+VITE_TMDB_API_KEY=your_tmdb_key
+```
 
-## Contact
+## Product philosophy
 
-- Email: shivansh@pixlcyber.com
-- Phone: +91 6304484526
+BORN should never feel like “facts about your birthday.”
+
+It should feel like: **here is the world that existed around you when your story began.**
+
+## Stack
+
+React · TypeScript · Vite · Tailwind · Framer Motion · shadcn/ui
